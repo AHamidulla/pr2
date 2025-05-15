@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from "react";
 import "./Xamid5.css";
 
 const projects = [
-  { id: 1, image: "./f1.png", reverse: false },
-  { id: 2, image: "./f2.png", reverse: true },
-  { id: 3, image: "./f3.png", reverse: false },
-  { id: 4, image: "./f4.png", reverse: true },
-  { id: 5, image: "./f5.png", reverse: false },
+  { id: 1, image: "./f1.png", reverse: false, link: "https://ahamidulla.github.io/Fairy-forest/" },
+  { id: 2, image: "./f2.png", reverse: true, link: "https://parallax-tau-puce.vercel.app/" },
+  { id: 3, image: "./f3.png", reverse: false, link: "https://anim-ashy.vercel.app/" },
+  { id: 4, image: "./f4.png", reverse: true, link: "https://online-shop-nine-tau.vercel.app/" },
+  { id: 5, image: "./f5.png", reverse: false, link:  "https://onine-shop1.vercel.app/"},
 ];
 
 const Xamid5 = () => {
@@ -17,18 +17,12 @@ const Xamid5 = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const video = entry.target.querySelector("video");
           const content = entry.target.querySelector(".xam5-content");
 
           if (entry.isIntersecting) {
-            if (video) video.play();
             entry.target.classList.add("visible");
             content.classList.add("animate");
           } else {
-            if (video) {
-              video.pause();
-              video.currentTime = 0;
-            }
             entry.target.classList.remove("visible");
             content.classList.remove("animate");
           }
@@ -77,13 +71,15 @@ const Xamid5 = () => {
             My <a>Projects</a>
           </h1>
 
-          {projects.map(({ id, image, reverse }, index) => (
+          {projects.map(({ id, image, reverse, link }, index) => (
             <div
               className={`xam5-con1 ${reverse ? "reverse" : ""}`}
               key={id}
               ref={(el) => (sectionRefs.current[index] = el)}
             >
-              <img src={image} alt={`Project ${id}`} className={`F${id}`} />
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                <img src={image} alt={`Project ${id}`} className={`F${id}`} />
+              </a>
               <ul className="xam5-content">
                 <li className="num">0{id}</li>
                 <li>
