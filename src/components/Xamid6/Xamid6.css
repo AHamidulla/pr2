@@ -1,0 +1,122 @@
+.xamid6 {
+  padding-top: 100px;
+
+}
+.xamid6_wrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  .xam6-cont1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 100px;
+    input {
+      width: 500px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid #000000;
+      font-size: 16px;
+    }
+    .inp1 {
+      height: 150px;
+      align-items: center;
+      justify-content: start;
+      padding-top: 0;
+    }
+    ul {
+      display: flex;
+      gap: 24px;
+      padding-top: 30px;
+      button {
+        background-color: #000000;
+        color: white;
+        padding: 16px 20px;
+        font-size: 20px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: #ffffff;
+          scale: 1.05;
+          color: rgb(0, 0, 0);
+          border: 1px solid #000000;
+        }
+      }
+      img {
+        width: 59px;
+        height: 59px;
+        background-color: rgb(255, 255, 255) !important;
+        border: 3px solid black;
+        border-radius: 5px;
+        padding: 18px;
+      }
+      .activ-a {
+        width: 59px;
+        height: 59px;
+        background-color: rgb(0, 0, 0) !important;
+        border: 3px solid rgb(0, 0, 0);
+        border-radius: 5px;
+        padding: 18px;
+      }
+    }
+  }
+}
+.xam6-cont2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 160px;
+  justify-content: left !important;
+
+  h1 {
+    font-size: 50px;
+    a {
+      padding-left: 20px;
+      padding-right: 20px;
+      color: white;
+      text-shadow: 0px 0px 10px #000000;
+    }
+  }
+  p {
+    color: #00000069;
+    font-size: 17px;
+  }
+  h2 {
+    color: #000000;
+    font-size: 30px;
+    padding-left: 0 !important;
+  }
+}
+
+.conn3 {
+  margin-top: 100px;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 600px;
+  padding: 40px;
+  margin-bottom: 0;
+  h1 {
+    color: white;
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 19px;
+  }
+}
+/* Начальное состояние (скрыто) */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+/* Когда элемент появляется */
+.animate-show {
+  opacity: 1;
+  transform: translateY(0);
+}

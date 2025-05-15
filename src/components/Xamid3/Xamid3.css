@@ -1,0 +1,163 @@
+.xamid3 {
+  margin-top: 100px;
+  padding-bottom: 100px;
+  background-color: black;
+}
+
+.xamid3_wrapper {
+  padding-top: 100px;
+  display: flex;
+  gap: 62px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.xam3-h1 {
+  color: white;
+  font-size: 50px;
+}
+
+.xam3-cont1,
+.xam3-cont2 {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.xam3-cont1 {
+  border: 1px solid rgba(255, 255, 255, 0.301);
+}
+
+.xam3-cont2 {
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.199);
+}
+
+.xam3-cont1 ul,
+.xam3-cont2 ul {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+
+
+.xam3-cont2 img {
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+}
+.xam3-cont1 img {
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+}
+.xam3-cont1 h1,
+.xam3-cont2 h1 {
+  padding-left: 20px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+}
+
+.xam3-cont1 p,
+.xam3-cont2 p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.493);
+  margin-left: 10px;
+}
+
+/* Анимация появления */
+/* Анимация появления */
+.fade-up {
+  opacity: 0.1; /* Начальная непрозрачность = 0 */
+  transform: translateY(30px);
+  transition: opacity .6s ease-in-out, transform .6s ease-in-out !important; /* Увеличим продолжительность анимации */
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.xam3-cont1,
+.xam3-cont2 {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  transition: all 0.5s ease-in-out !important;
+  background-color: rgba(255, 255, 255, 0.1); 
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3); 
+  }
+}
+
+
+
+.xam3-cont1 ul,
+.xam3-cont2 ul {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.xam3-cont1 img,
+.xam3-cont2 img {
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.6); /* Изменил прозрачность для плавности */
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Плавное изменение при наведении */
+}
+
+.xam3-cont1 img:hover,
+.xam3-cont2 img:hover {
+  transform: scale(1.1); /* Увеличиваем иконки при наведении */
+  background-color: rgba(255, 255, 255, 0.8); /* Меняем фон иконки */
+}
+.xam3-cont1,
+.xam3-cont2 {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, background-color 0.8s ease; /* Плавное изменение фона и масштаба */
+}
+
+.xam3-cont1:hover,
+.xam3-cont2:hover {
+     transition: background-color 0.8s ease, transform 0.3s ease !important; /* Плавный переход фона */
+  background-color: rgba(255, 255, 255, 0.3); /* Меняем фон при наведении */
+  
+}
+
+.xam3-cont2:hover {
+  transition: background-color 0.8s ease, transform 0.8s ease-in !important; /* Плавный переход фона */
+  background-color: rgba(255, 255, 255, 0.628); /* Меняем фон при наведении */
+  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.199);
+  h1 {
+    color: black;
+  }
+  p {
+    color: rgba(0, 0, 0, 0.807);
+  }
+  img {
+    background-color: rgb(255, 255, 255) !important; /* Меняем фон иконки */
+  }
+}

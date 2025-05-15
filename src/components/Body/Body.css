@@ -1,0 +1,100 @@
+:root {
+  --index: calc(1vw + 1vh);
+  --color-header: #000000;
+  --color-text: #000000;
+  --gallery-gap: calc(var(--index) * 7.5);
+}
+
+/* Шрифты */
+@font-face {
+  font-family: raleway-c;
+  src: url(/fonts/raleway-regular.woff2);
+}
+@font-face {
+  font-family: outfit-c;
+  src: url(/fonts/outfit-regular.woff2);
+}
+
+/* ScrollSmoother обертки */
+.body-wrapper {
+  
+
+  background-color: #00000000;
+  
+  padding-top: 3000px;
+  
+}
+
+.body-content {
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Hero section */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+}
+
+/* Заголовок */
+.my__h {
+  border-right: solid 3px rgba(0, 255, 0, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 78px;
+  margin: 40px auto;
+  color: rgb(0, 0, 0);
+  animation: animated-text 4s steps(29, end) 1s 1 normal both,
+             animated-cursor 600ms steps(29, end) infinite;
+}
+
+@keyframes animated-text {
+  from { width: 0; }
+  to { width: 600px; }
+}
+@keyframes animated-cursor {
+  from { border-right-color: white; }
+  to { border-right-color: transparent; }
+}
+
+/* Галерея */
+.gallery {
+  display: flex;
+  padding: calc(var(--index) * 8) 0;
+}
+
+.gallery > * {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery__item {
+  max-width: calc(var(--index) * 21);
+  margin-bottom: var(--gallery-gap);
+}
+
+.gallery__left {
+  margin-top: 120px;
+}
+
+.gallery__right .gallery__item {
+  margin-top: 120px;
+}
+
+/* Текст */
+.text-block {
+  color: white;
+}
+.text-block__h {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin-bottom: 1rem;
+}
+.text-block__p {
+  line-height: 1.8rem;
+}
+h2, p {
+  color: white;
+}

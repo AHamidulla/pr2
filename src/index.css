@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+ul,
+ol,
+p,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}                           
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  animation: floatUp 10s linear infinite;
+}
+
+.particle:nth-child(even) {
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(50px);
+  }
+}
+
+/* Случайное положение */
+.particle {
+  left: calc(100% * var(--i));
+  top: calc(100vh + 10px);
+  --i: calc(var(--rand) / 20); /* не забудь в JS задать эти значения */
+}
+

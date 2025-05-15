@@ -1,0 +1,425 @@
+:root {
+  --option-height: 400px;
+  --option-width: 60px;
+  --radius: 1.875rem;
+  --gutter: 10px;
+  --bg: #f5f5f5;
+  --total-options: 6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f2020;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(14, 14, 14);
+  border-radius: 100px 100px 0 0;
+}
+
+.Body2_text {
+  font-size: 50px;
+  
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 50px;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+    
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  min-width: 480px;
+  max-width: calc(var(--total-options) * 130px);
+  height: var(--option-height);
+  width: 100%;
+}
+
+.option {
+  border: 1px solid transparent;
+  box-shadow: 0px 5px 20px transparent;
+  margin: var(--gutter);
+  flex-grow: 1;
+  border-radius: var(--radius);
+  border: 1px solid #ffffff;
+  flex: 0 0 var(--option-width);
+  transition: flex-grow 1.25s cubic-bezier(0.17, 0.84, 0.44, 1);
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+}
+
+.option video.option-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  pointer-events: none; /* так можно кликать по обёртке .option, а не по видео */
+}
+
+.option:not(.active) {
+  cursor: pointer;
+}
+
+.option.active {
+  flex-grow: var(--total-options);
+}
+
+@media (max-width: 767.98px) {
+  .options {
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: auto;
+  }
+  .option {
+    flex: 0 0 auto;
+    height: var(--option-height);
+    width: 100%;
+  }
+}
+
+/* Стили для анимированной кнопки */
+.boton {
+  width: 200px;
+  height: 50px;
+  margin: 50px auto;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.botontext {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  line-height: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.twist {
+  display: block;
+  height: 100%;
+  width: 25%;
+  position: relative;
+  float: left;
+  margin-left: -4px;
+}
+
+.twist:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  bottom: 100%;
+  position: absolute;
+  transform-origin: center bottom 0px; 
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 0, -1, -0.003,
+                      0, 1, 0, 0,
+                      0, 0, 0, 1);
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.twist:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  height: 100%;
+  background: #000000;
+  color: rgb(255, 253, 253);
+  transform-origin: center top 0px;
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 1, 0, 0,
+                      0, 0, 1, -0.003,
+                      0, -50, 0, 1);
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.boton:hover .twist:before {
+  background: #000000;
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 1, 0, 0,
+                      0, 0, 1, 0.003,
+                      0, 50, 0, 1);
+}
+
+.boton:hover .twist:after {
+  background: #ffffff;
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 0, -1, 0.003,
+                      0, 1, 0, 0,
+                      0, 0, 0, 1);
+}
+
+.boton .twist:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.boton .twist:nth-of-type(1):before,
+.boton .twist:nth-of-type(1):after {
+  transition-delay: 0s;
+}
+
+.boton .twist:nth-of-type(2):before,
+.boton .twist:nth-of-type(2):after {
+  transition-delay: 0.1s;
+}
+
+.boton .twist:nth-of-type(3):before,
+.boton .twist:nth-of-type(3):after {
+  transition-delay: 0.2s;
+}
+
+.boton .twist:nth-of-type(4):before,
+.boton .twist:nth-of-type(4):after {
+  transition-delay: 0.3s;
+}
+
+.boton .botontext:nth-of-type(1) {
+  color: #ffffff;
+  font-size: 15px;
+  bottom: 100%;
+  transform-origin: center bottom 0px; 
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 0, -1, -0.003,
+                      0, 1, 0, 0,
+                      0, 0, 0, 1);
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.boton:hover .botontext:nth-of-type(1) {
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 1, 0, 0,
+                      0, 0, 1, 0.003,
+                      0, 50, 0, 1);
+}
+
+.boton .botontext:nth-of-type(2) {
+  color: #000000;
+  font-size: 15px;
+  top: 100%;
+  transform-origin: center top 0px;
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 1, 0, 0,
+                      0, 0, 1, -0.003,
+                      0, -50, 0, 1);
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.boton:hover .botontext:nth-of-type(2) {
+  transform: matrix3d(1, 0, 0, 0,
+                      0, 0, -1, 0.003,
+                      0, 1, 0, 0,
+                      0, 0, 0, 1);
+}
+
+/* Стили для меню (если понадобятся) */
+.square {
+  border: 1px solid #ffffff;
+  height: 26px;
+  width: 26px;
+  display: block;
+  margin: 40px auto;
+  transform: rotate(45deg);
+  overflow: hidden;
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.square .burgerwrap {
+  height: 18px;
+  width: 21px;
+  transform: rotate(-45deg);
+  padding-left: 5px;
+  padding-top: 8px;
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.square:hover {
+  transform: rotate(135deg);
+  border: 1px solid #fff;
+}
+
+.square:hover .burgerwrap {
+  transform: rotate(-135deg);
+}
+
+.square span {
+  height: 2px;
+  width: 14px;
+  background: #000000;
+  display: block;
+  margin-bottom: 2px;
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.square span:after {
+  content: "";
+  height: 2px;
+  width: 14px;
+  position: absolute;
+  background: #ffffff;
+  left: -19px;
+  transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995);
+}
+
+.square:hover span {
+  margin-left: 26px;
+}
+
+.square:hover span:after {
+  left: 5px;
+}
+
+.square span:nth-of-type(1),
+.square span:nth-of-type(1):after {
+  transition-delay: 0.1s;
+}
+
+.square span:nth-of-type(2),
+.square span:nth-of-type(2):after {
+  transition-delay: 0.2s;
+}
+
+.square span:nth-of-type(3),
+.square span:nth-of-type(3):after {
+  transition-delay: 0.3s;
+}
+
+
+
+
+.blobb {
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 30px;
+ 
+}
+
+.blob-btn2 {
+  z-index: 1;
+  position: relative;
+  padding: 50px 100px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: transparent !important;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.blob-btn2::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+}
+
+.blob-btn2::after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+}
+
+.blob-btn2:hover {
+  color: #000000;
+  border-radius: 30px;
+}
+
+.blob-btn2:hover::after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+
+.blob-btn__inner2 {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #000000;
+}
+
+.blob-btn__blobs2 {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url('#goo');
+}
+
+.blob-btn__blob2 {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.4);
+  transition: transform 0.45s;
+}
+
+/* Blob positioning and delay */
+.blob-btn__blob2:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+.blob-btn__blob2:nth-child(2) {
+  left: 25%;
+  transition-delay: 0.08s;
+}
+.blob-btn__blob2:nth-child(3) {
+  left: 50%;
+  transition-delay: 0.16s;
+}
+.blob-btn__blob2:nth-child(4) {
+  left: 75%;
+  transition-delay: 0.24s;
+}
+
+.blob-btn2:hover .blob-btn__blob2 {
+  transform: translateZ(0) scale(1.4);
+}
+

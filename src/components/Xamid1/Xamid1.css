@@ -1,0 +1,212 @@
+.Xamid1 {
+  padding-top: 24px;
+}
+
+
+.Xamid1__wrapper {
+  .xam-navmenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .xamul1 {
+      display: flex;
+      gap: 10px;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      h1 {
+        color: black;
+      }
+    }
+    .xamul2 {
+      display: flex;
+      gap: 42px;
+      font-size: 13px;
+    }
+    .xamul3 {
+      button {
+        background-color: #f0f0f000;
+        border: 2px solid #000000;
+        padding: 15px 25px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 800;
+        color: #000000;
+      }
+    }
+  }
+}
+
+.xam-content {
+  display: flex;
+  padding-top: 60px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  
+  .xamcon1 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    
+    h1 {
+      width: 500px;
+      font-size: 40px;
+      font-weight: 100;
+      color: #000000;
+      word-spacing: 10px;
+      opacity: 0;
+      animation: fadeInText 1.5s ease-out forwards;
+      animation-delay: 0.5s; 
+      
+      a {
+        font-size: 50px;
+        font-weight: bold;
+        color: #000000;
+        padding: 0 20px;
+        opacity: 0;
+        animation: fadeInLink 1s ease-out forwards; 
+        animation-delay: 0.3s; 
+      }
+    }
+    
+    p {
+      width: 600px;
+      padding-top: 30px;
+      font-size: 15px;
+      color: gray;
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+      animation-delay: 1s;
+    }
+    
+    ul {
+      display: flex;
+      gap: 30px;
+      padding-top: 130px;
+      opacity: 0;
+      animation: fadeInUp 2s ease-out forwards;
+      animation-delay: 1.5s;
+
+      li {
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+        animation-delay: 1.5s; 
+        transform: translateY(20px); 
+        
+        &:nth-child(1) {
+          animation-delay: 1.5s; 
+        }
+        &:nth-child(2) {
+          animation-delay: 1.8s; 
+        }
+        &:nth-child(3) {
+          animation-delay: 2.1s; 
+        }
+        &:nth-child(4) {
+          animation-delay: 2.4s; 
+        }
+        
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      
+      .activ-a {
+        font-size: 20px;
+        font-weight: 800;
+        padding: 10px 14px;
+        background-color: black;
+      }
+      
+      a {
+        font-size: 20px;
+        font-weight: 800;
+        padding: 10px 14px;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid #000000;
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .xamcon2 {
+    padding-left: 400px;
+    position: absolute;
+    opacity: 0;
+    animation: slideIn 2s ease-out forwards;
+    animation-delay: 1s;
+  }
+}
+
+/* Анимации */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.Xamid1::before,
+.Xamid1::after {
+  content: "";
+  position: fixed;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(to bottom, transparent, #00f0ff, transparent);
+  animation: moveLine 3s linear infinite;
+  z-index: 999;
+}
+
+.Xamid1::before {
+  left: 0;
+}
+
+.Xamid1::after {
+  right: 0;
+}
+
+@keyframes moveLine {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}

@@ -1,0 +1,262 @@
+.xamid5 {
+  margin-top: 150px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  background-color: black;
+}
+
+.xamid5_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+
+.xamid5_title2 {
+  border-right: solid 2px rgba(0, 255, 0, 0.75);
+  white-space: nowrap;
+  font-size: 60px;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+  /* Убираем анимацию изначально */
+}
+
+.xamid5_title2.animate-title {
+  animation: animated-text2 2s steps(19, end) 1s 1 normal both,
+             animated-cursor2 600ms steps(29, end) infinite;
+}
+
+/* Сохранение остальных стилей анимации */
+@keyframes animated-text2 {
+  from { width: 0px; }
+  to { width: 380px; }
+}
+
+@keyframes animated-cursor2 {
+  from { border-right-color: white; }
+  to { border-right-color: transparent; }
+}
+
+
+
+.xamid5_title a {
+  padding-left: 10px;
+  color: white;
+  font-weight: 900;
+}
+
+.xam5-con1 {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+  
+
+}
+
+.xam5-con1.reverse {
+  flex-direction: row-reverse;
+}
+
+.xam5-con1.visible {
+  opacity: 1;
+  transform: translateY(0);
+  
+}
+
+.xam5-con1 video {
+  width: 500px;
+  height: auto;
+  border: 1px solid white;
+  border-radius: 20px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+  
+}
+
+.xam5-con1.reverse video {
+  transform: translateX(50px);
+  
+}
+
+.xam5-con1.visible video {
+  opacity: 1;
+  transform: translateX(0);
+  
+}
+
+.xam5-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 100px;
+  
+}
+
+.xam5-content li.num,
+.xam5-content li h1,
+.xam5-content p {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+  
+}
+
+.xam5-con1.reverse .xam5-content li.num,
+.xam5-con1.reverse .xam5-content li h1,
+.xam5-con1.reverse .xam5-content p {
+  transform: translateX(-50px);
+  
+}
+
+.xam5-con1.visible .xam5-content.animate li.num {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+  
+}
+
+.xam5-con1.visible .xam5-content.animate li h1 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s;
+  
+}
+
+.xam5-con1.visible .xam5-content.animate p {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.6s;
+  
+}
+
+.num {
+  font-size: 50px;
+  font-weight: 900;
+  color: white;
+  
+}
+
+.xam5-content h1 {
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+  
+}
+
+.xam5-content p {
+  font-size: 15px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.519);
+  width: 400px;
+}
+.F1, .F2, .F3, .F4, .F5 {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 40px;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.F1:hover, .F2:hover, .F3:hover, .F4:hover, .F5:hover {
+  transform: scale(1.05);
+}
+/* Стиль кнопки с анимацией "играющей" музыки */
+.xamul3 button {
+  background-color: transparent;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
+  color: #000000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.xamul3 button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: -1;
+  transition: all 0.4s ease;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.xamul3 button:hover {
+  color: #ffffff;
+}
+
+.xamul3 button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.xamul3 button:active {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(0.98);
+}
+
+.audio-toggle-btn {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.audio-toggle-btn .equalizer {
+  display: flex;
+  gap: 3px;
+}
+
+.audio-toggle-btn .equalizer span {
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: #00ff88;
+  border-radius: 2px;
+  animation: none;
+  transform-origin: bottom;
+}
+
+.audio-toggle-btn.playing .equalizer span:nth-child(1) {
+  animation: bounce 0.9s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.audio-toggle-btn.playing .equalizer span:nth-child(2) {
+  animation: bounce 0.9s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.audio-toggle-btn.playing .equalizer span:nth-child(3) {
+  animation: bounce 0.9s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.audio-toggle-btn.playing .equalizer span:nth-child(4) {
+  animation: bounce 0.9s infinite ease-in-out;
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(2); }
+  100% { transform: scaleY(1); }
+}
