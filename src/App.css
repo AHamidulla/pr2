@@ -20,7 +20,6 @@
   }
 }
 
-
 /* Стиль эквалайзера */
 .audio-toggle-btn {
   display: flex;
@@ -31,7 +30,6 @@
 .audio-toggle-btn .equalizer {
   display: flex;
   gap: 3px;
-  
 }
 
 .audio-toggle-btn .equalizer span {
@@ -42,13 +40,12 @@
   border-radius: 2px;
   animation: bounce 0.9s infinite ease-in-out;
   transform-origin: bottom;
-  
-  
 }
 
 /* Зеркальная анимация для движения вверх и вниз */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: scaleY(1);
   }
   50% {
@@ -58,7 +55,8 @@
 
 /* Зеркальная анимация для движения вверх и вниз */
 @keyframes bounceReverse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scaleY(1);
   }
   50% {
@@ -115,7 +113,9 @@
   gap: 200px;
 }
 
-.xam-navmenu .xamul1, .xam-navmenu .xamul2, .xam-navmenu .xamul3 {
+.xam-navmenu .xamul1,
+.xam-navmenu .xamul2,
+.xam-navmenu .xamul3 {
   display: flex;
   gap: 42px;
   font-size: 13px;
@@ -175,7 +175,7 @@
 .xam-navmenu .xamul2 h1::before,
 .xam-navmenu .xamul1 h1::after,
 .xam-navmenu .xamul2 h1::after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: #000000;
   transition: all 0.3s ease;
@@ -205,12 +205,12 @@
 }
 
 .xam-navmenu.dark {
-  background-color: rgba(0, 0, 0, 0.767) !important;
+  background-color: rgba(255, 255, 255, 0.767) !important;
 }
 
 .xam-navmenu.dark h1,
 .xam-navmenu.dark button {
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
   border-color: white;
 }
 
@@ -233,7 +233,68 @@
   color: rgb(0, 0, 0);
 }
 
-
-.xamid2-wrapper-animated, .xamid1, .xamid3, .xamid5 {
+.xamid2-wrapper-animated,
+.xamid1,
+.xamid3,
+.xamid5 {
   transition: background-color 0.3s ease;
+}
+/* Стили для header */
+.xam-navmenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: white;
+  color: black;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.xam-navmenu.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Остальные стили остаются такими же как в вашем коде */
+.xamul1,
+.xamul2,
+.xamul3 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.xamul2 li h1 {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.xamul2 li h1:hover {
+  opacity: 0.7;
+}
+
+/* Стандартный navmenu */
+.xam-navmenu {
+  background-color: white;
+  color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Темный фон для 3 и 5 секции */
+.xam-navmenu.dark {
+  background-color: black;
+  color: white;
+}
+
+.xam-navmenu.dark h1,
+.xam-navmenu.dark button {
+  color: white;
 }

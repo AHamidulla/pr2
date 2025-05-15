@@ -3,10 +3,10 @@ import "./Xamid5.css";
 
 const projects = [
   { id: 1, image: "./f1.png", reverse: false, link: "https://ahamidulla.github.io/Fairy-forest/" },
-  { id: 2, image: "./f2.png", reverse: true, link: "https://parallax-tau-puce.vercel.app/" },
-  { id: 3, image: "./f3.png", reverse: false, link: "https://anim-uz.vercel.app/" },
-  { id: 4, image: "./f4.png", reverse: true, link: "https://online-shop-nine-tau.vercel.app/" },
-  { id: 5, image: "./f5.png", reverse: false, link:  "https://onine-shop1.vercel.app/"},
+  { id: 2, image: "./f2.png", reverse: true, link: "https://ahamidulla.github.io/---/" },
+  { id: 3, image: "./f3.png", reverse: false, link: "https://anim-ashy.vercel.app/" },
+  { id: 4, image: "./f4.png", reverse: true, link: "https://onine-shop1.vercel.app/" },
+  { id: 5, image: "./f5.png", reverse: false, link: "https://online-shop-nine-tau.vercel.app/" },
 ];
 
 const Xamid5 = () => {

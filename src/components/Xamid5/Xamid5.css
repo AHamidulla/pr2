@@ -5,7 +5,6 @@
   background-color: black;
 }
 
-
 .xamid5_wrapper {
   display: flex;
   flex-direction: column;
@@ -25,21 +24,27 @@
 
 .xamid5_title2.animate-title {
   animation: animated-text2 2s steps(19, end) 1s 1 normal both,
-             animated-cursor2 600ms steps(29, end) infinite;
+    animated-cursor2 600ms steps(29, end) infinite;
 }
 
 /* Сохранение остальных стилей анимации */
 @keyframes animated-text2 {
-  from { width: 0px; }
-  to { width: 380px; }
+  from {
+    width: 0px;
+  }
+  to {
+    width: 380px;
+  }
 }
 
 @keyframes animated-cursor2 {
-  from { border-right-color: white; }
-  to { border-right-color: transparent; }
+  from {
+    border-right-color: white;
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
-
-
 
 .xamid5_title a {
   padding-left: 10px;
@@ -55,8 +60,6 @@
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s ease;
-  
-
 }
 
 .xam5-con1.reverse {
@@ -66,7 +69,6 @@
 .xam5-con1.visible {
   opacity: 1;
   transform: translateY(0);
-  
 }
 
 .xam5-con1 video {
@@ -77,18 +79,15 @@
   opacity: 0;
   transform: translateX(-50px);
   transition: all 1s ease;
-  
 }
 
 .xam5-con1.reverse video {
   transform: translateX(50px);
-  
 }
 
 .xam5-con1.visible video {
   opacity: 1;
   transform: translateX(0);
-  
 }
 
 .xam5-content {
@@ -96,7 +95,6 @@
   flex-direction: column;
   gap: 20px;
   padding: 0 100px;
-  
 }
 
 .xam5-content li.num,
@@ -105,49 +103,42 @@
   opacity: 0;
   transform: translateX(50px);
   transition: all 0.8s ease;
-  
 }
 
 .xam5-con1.reverse .xam5-content li.num,
 .xam5-con1.reverse .xam5-content li h1,
 .xam5-con1.reverse .xam5-content p {
   transform: translateX(-50px);
-  
 }
 
 .xam5-con1.visible .xam5-content.animate li.num {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.2s;
-  
 }
 
 .xam5-con1.visible .xam5-content.animate li h1 {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.4s;
-  
 }
 
 .xam5-con1.visible .xam5-content.animate p {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.6s;
-  
 }
 
 .num {
   font-size: 50px;
   font-weight: 900;
   color: white;
-  
 }
 
 .xam5-content h1 {
   font-size: 30px;
   font-weight: 400;
   color: white;
-  
 }
 
 .xam5-content p {
@@ -156,7 +147,11 @@
   color: rgba(255, 255, 255, 0.519);
   width: 400px;
 }
-.F1, .F2, .F3, .F4, .F5 {
+.F1,
+.F2,
+.F3,
+.F4,
+.F5 {
   width: 550px;
   height: auto;
   object-fit: cover;
@@ -165,7 +160,11 @@
   transition: all 0.3s ease;
 }
 
-.F1:hover, .F2:hover, .F3:hover, .F4:hover, .F5:hover {
+.F1:hover,
+.F2:hover,
+.F3:hover,
+.F4:hover,
+.F5:hover {
   transform: scale(1.05);
 }
 /* Стиль кнопки с анимацией "играющей" музыки */
@@ -187,7 +186,7 @@
 }
 
 .xamul3 button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -257,7 +256,14 @@
 }
 
 @keyframes bounce {
-  0% { transform: scaleY(1); }
-  50% { transform: scaleY(2); }
-  100% { transform: scaleY(1); }
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
+
